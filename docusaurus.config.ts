@@ -5,20 +5,13 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Joseph Karasek",
+  tagline: "Software Engineer and Design Technologist",
   favicon: "img/favicon.ico",
-
-  // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: "https://www.joekarasek.com",
   baseUrl: "/",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "joekarasek", // Usually your GitHub org/user name.
+  projectName: "Web Portfolio 2024", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -38,11 +31,9 @@ const config: Config = {
       "classic",
       {
         docs: {
+          path: "./projects",
+          routeBasePath: "/projects",
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
@@ -60,7 +51,7 @@ const config: Config = {
           onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: "./src/css/custom.scss",
         },
       } satisfies Preset.Options,
     ],
@@ -70,22 +61,32 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "My Site",
-      logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
-      },
+      title: "Home",
+      // logo: {
+      //   alt: "My Site Logo",
+      //   src: "img/logo.svg",
+      // },
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "projectsSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Projects",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        { to: "/blog", label: "Articles", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "mailto:joseph.karasek@gmail.com",
+          label: "Email",
+          position: "right",
+        },
+        {
+          href: "https://github.com/joekarasek",
           label: "GitHub",
+          position: "right",
+        },
+        {
+          href: "https://www.linkedin.com/in/joekarasek",
+          label: "Linkedin",
           position: "right",
         },
       ],
@@ -98,7 +99,7 @@ const config: Config = {
           items: [
             {
               label: "Tutorial",
-              to: "/docs/intro",
+              to: "/projects/intro",
             },
           ],
         },
