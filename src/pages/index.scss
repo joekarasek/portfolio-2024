@@ -1,0 +1,80 @@
+$space-stack-l: clamp(80px, calc(5rem + ((1vw - 6px) * 24)), 800px);
+
+@mixin display-font {
+  font-family: 'Carrois Gothic SC', system-ui;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.1rem;
+}
+
+.home {
+  padding: 0 clamp(12px, 10vw, 200px);
+}
+
+.banner {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+  padding: $space-stack-l 0 0;
+
+  &__name {
+    font-size: clamp(48px, 12vw, 80px);
+
+    @include display-font;
+  }
+
+  &__title {
+    grid-column: 1;
+    font-size: clamp(36px, 8vw, 52px);
+    line-height: 1;
+
+    @include display-font;
+  }
+
+  &__image {
+    order: -1;
+    margin-bottom: 40px;
+
+    @media screen and (width > 1200px) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      justify-self: center;
+      order: unset;
+
+      margin-bottom: 0;
+    }
+  }
+}
+
+.skills-intro,
+.intro {
+  max-width: 958px;
+  margin: $space-stack-l auto 0;
+
+  &__title {
+    @include display-font;
+
+    margin-bottom: 2rem;
+    font-size: 3.25rem;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+}
+
+.skills-grid {
+  container-name: card-grid;
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+
+  max-width: 1500px;
+  margin: 60px auto 0;
+}
+
+.skill-card {
+  grid-column: span 6;
+
+
+
+}
