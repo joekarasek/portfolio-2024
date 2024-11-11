@@ -75,6 +75,31 @@ $space-stack-l: clamp(80px, calc(5rem + ((1vw - 6px) * 24)), 800px);
 .skill-card {
   grid-column: span 6;
 
+  height: 100%;
+  padding: var(--ifm-global-spacing);
 
+  line-height: var(--ifm-heading-line-height);
+  text-decoration: var(--ifm-link-decoration);
 
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-pagination-nav-border-radius);
+
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+
+  &__title {
+    @include display-font;
+
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  @container card-grid (width > 824px) {
+    grid-column: span 3;
+  }
+
+  @container card-grid (width > 1248px) {
+    grid-column: span 2;
+  }
 }
