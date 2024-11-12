@@ -95,11 +95,19 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "Site",
           items: [
             {
-              label: "Tutorial",
+              label: "Projects",
               to: "/projects/intro",
+            },
+            {
+              label: "Articles",
+              to: "/blog",
+            },
+            {
+              label: "Reviews",
+              to: "/reviews",
             },
           ],
         },
@@ -107,16 +115,12 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: "Linkedin",
+              href: "https://linkedin.com/in/joekarasek",
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
+              label: "Slack - Design Systems",
+              href: "https://design-systems.slack.com/team/U01QNRCNKSL",
             },
           ],
         },
@@ -124,17 +128,17 @@ const config: Config = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
               label: "GitHub",
               href: "https://github.com/facebook/docusaurus",
+            },
+            {
+              label: "Email",
+              href: "mailto:joseph.karasek@gmail.com",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()}. Built with Docusaurus 🦖.`,
     },
     prism: {
       theme: prismThemes.github,

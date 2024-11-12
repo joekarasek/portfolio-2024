@@ -1,3 +1,4 @@
+.highlights,
 .skills-intro,
 .intro {
   max-width: 958px;
@@ -14,8 +15,7 @@
 }
 
 .skills-grid {
-  container-name: card-grid;
-  container-type: inline-size;
+  container: card-grid / inline-size;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 24px;

@@ -5,6 +5,10 @@ export const HomepageBannerSection = () => (
       <h2 className="banner__title">Software Engineer</h2>
       <h2 className="banner__title">Design Technologist</h2>
     </div>
-    <img src="/img/me.jpg" alt="Joe Karasek" className="banner__image" />
+    <img
+      src="https://picsum.photos/id/237/600/400"
+      alt="Joe Karasek"
+      className="banner__image"
+    />
   </div>
 );
