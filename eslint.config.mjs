@@ -15,6 +15,7 @@ export default [
   {
     rules: {
       "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
       // For inline imports of svg, ex. require("@site/static/img/undraw_docusaurus_mountain.svg").default
       "@typescript-eslint/no-require-imports": "off",
     },
