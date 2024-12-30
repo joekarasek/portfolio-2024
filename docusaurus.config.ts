@@ -74,6 +74,7 @@ const config: Config = {
           label: "Projects",
         },
         { to: "/blog", label: "Articles", position: "left" },
+        { to: "/recommendations", label: "Recommendations", position: "left" },
         {
           href: "mailto:joseph.karasek@gmail.com",
           label: "Email",
@@ -107,7 +108,8 @@ const config: Config = {
             },
             {
               label: "Reviews",
-              to: "/reviews",
+              // todo fix this link
+              to: "/",
             },
           ],
         },
