@@ -1,0 +1,43 @@
+.avatar {
+  align-self: start;
+
+  &__photo {
+    --ifm-avatar-photo-size: 3.6rem;
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__title {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    display: -webkit-box;
+    overflow: hidden;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  &__socials {
+    height: var(--docusaurus-blog-social-icon-size);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    line-height: 0;
+    overflow: hidden;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}

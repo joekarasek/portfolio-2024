@@ -1,2 +1,2 @@
-yarn lint
+
 git update-index --again

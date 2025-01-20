@@ -1,0 +1,9 @@
+// Spacing Utilities
+
+.margin-top--responsive-xl {
+  margin-top: clamp(80px, 5rem + (1vw - 6px) * 24, 800px);
+}
+
+.margin-bottom--responsive-xl {
+  margin-bottom: clamp(80px, 5rem + (1vw - 6px) * 24, 800px);
+}

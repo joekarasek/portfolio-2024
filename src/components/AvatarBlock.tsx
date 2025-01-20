@@ -17,25 +17,18 @@ export const AvatarBlock: React.FC<AvatarBlockProps> = ({
   name,
   title,
 }) => (
-  <div className="avatar margin-bottom--sm">
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="avatar__photo-link"
-    >
-      <img className="avatar__photo authorImage_XqGP" src={image} alt={name} />
+  <div className="avatar">
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <img className="avatar__photo" src={image} alt={name} />
     </a>
-    <div className="avatar__intro authorDetails_lV9A">
+    <div className="avatar__intro">
       <div className="avatar__name">
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <span className="authorName_yefp">{name}</span>
-        </a>
+        <a href={link} target="_blank" rel="noopener noreferrer">{name}</a>
       </div>
-      <small className="authorTitle_nd0D" title={title}>
+      <small className="avatar__title" title={title}>
         {title}
       </small>
-      <div className="authorSocials_rSDt">
+      <div className="avatar__socials">
         {linkedin && (
           <a
             href={linkedin}

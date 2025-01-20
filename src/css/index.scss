@@ -3,6 +3,7 @@
 
 // Pages
 @import "../pages/index";
+@import "../pages/recommendations";
 
 // Sections
 @import "../sections/HomepageBannerSection/HomepageBannerSection";
@@ -10,3 +11,8 @@
 @import "../sections/HomepageHighlightsSection/HomepageHighlightsSection";
 
 // Components
+@import "../components/AvatarBlock.scss";
+@import "../components/RecommendationCard.scss";
+
+// Utilities
+@import "./utilities";
