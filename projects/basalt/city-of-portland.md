@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
+title: City of Portland
+description: Building a consistent design language and scalable frontend architecture for https://www.portland.gov/
 ---
-
-# City of Portland Design System
 
 ## About
 
@@ -51,6 +51,6 @@ tooling, CI/CD, and docker configuration.
 
 ## Screenshots
 
-[//]: # (![City of Portland]&#40;/img/cop-1.jpg&#41;)
-[//]: # (![City of Portland]&#40;/img/cop-2.jpg&#41;)
-[//]: # (![City of Portland]&#40;/img/cop-3.jpg&#41;)
+![City of Portland](/img/cop-1.jpeg) 
+![City of Portland](/img/cop-2.jpeg)
+![City of Portland](/img/cop-3.jpeg)

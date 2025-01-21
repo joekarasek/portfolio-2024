@@ -1,15 +1,17 @@
 ---
-sidebar_position: 7
+sidebar_position: 5
+title: Cambia Health Solutions
+description: Cambia Health Solutions design system consulting and engineering
 image: /img/cambia.png
 ---
 
-# Cambia Health Solutions
-
-Worked on the Cambia Health Solutions design system.
+## About
 
 As a senior front-end developer and developer, I worked on the Cambia Health Solutions design system.
 
 This project involved setting up a next generation proof-of-concept component library using React and Storybook. I was involved in setting up the initial repository structure including tooling, build pipelines, linting, and testing. I also help structure the initial design token system, built an initial five components, and documented everything in Storybook.
+
+Additionally, we built a proof-of-concept authoring system that integrated the new design system with a CMS. The goal was to demonstate how a modular, component based approach to authoring could power a more flexible and rapid content authoring workflow.
 
 ## Deliverables
 
@@ -25,3 +27,5 @@ This project involved setting up a next generation proof-of-concept component li
 - Contentful CMS
 - Typescript
 - Storybook
+
+[//]: # (![Cambia]&#40;/img/cambia.jpeg&#41;)

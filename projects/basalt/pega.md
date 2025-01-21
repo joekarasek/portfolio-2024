@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+title: Pega
+description: The Bolt Design System
+sidebar_position: 6
 ---
-
-# Pega Systems
 
 ## About
 

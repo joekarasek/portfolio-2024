@@ -1,8 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 9
+title: Foodie
+description: A peer-2-peer marketplace for home cooked meals and cottage kitchens
 ---
-
-# Foodie
 
 ## About
 
@@ -53,4 +53,4 @@ ground up. This involved multiple phases, including:
 
 ## Screenshots
 
-[//]: # (![Foodie]&#40;/img/foodie.png&#41;)
+![Foodie](/img/foodie.jpeg)

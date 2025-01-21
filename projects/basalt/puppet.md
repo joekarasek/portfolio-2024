@@ -1,8 +1,8 @@
 ---
-sidebar_position: 9
+sidebar_position: 7
+title: Puppet
+description: Frontend engineering and consulting on a rebrand and rebuild of puppet.com
 ---
-
-# Puppet
 
 ## About
 
@@ -44,10 +44,7 @@ the Gatbsy build pipeline for the marketing site.
 
 ## Screenshots
 
-[//]: # (![Puppet]&#40;/img/puppet.png&#41;)
-
-[//]: # (![Puppet]&#40;/img/puppet-2.png&#41;)
-
-[//]: # (![Puppet]&#40;/img/puppet-3.png&#41;)
-
-[//]: # (![Puppet]&#40;/img/puppet-4.png&#41;)
+![Puppet](/img/puppet.jpeg)
+![Puppet](/img/puppet-2.jpeg)
+![Puppet](/img/puppet-3.jpeg)
+![Puppet](/img/puppet-4.jpeg)

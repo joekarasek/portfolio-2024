@@ -1,8 +1,9 @@
 ---
-sidebar_position: 8
+title: AAAS Science Magazine - Search and Discovery Page
+sidebar_label: AAAS Science Magazine
+description: Article search and discovery interface
+sidebar_position: 3
 ---
-
-# AAAS Science Magazine - Search and Discovery
 
 ## About
 
@@ -23,4 +24,4 @@ predecessor to Storybook.
 
 ## Screenshots
 
-[//]: # (![AAAS Science Magazine Search and Discovery]&#40;/img/aaas.png&#41;)
+![AAAS Science Magazine Search and Discovery](/img/aaas.jpeg)
