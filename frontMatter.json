@@ -1,0 +1,87 @@
+[
+  {
+    "title": "AAAS Science Magazine - Search and Discovery Page",
+    "sidebar_label": "AAAS Science Magazine",
+    "description": "Article search and discovery interface",
+    "sidebar_position": 3
+  },
+  {
+    "sidebar_position": 5,
+    "title": "Cambia Health Solutions",
+    "description": "Cambia Health Solutions design system consulting and engineering",
+    "image": "/img/cambia.png"
+  },
+  {
+    "sidebar_position": 2,
+    "title": "City of Portland",
+    "description": "Building a consistent design language and scalable frontend architecture for https://www.portland.gov/"
+  },
+  {
+    "sidebar_position": 9,
+    "title": "Foodie",
+    "description": "A peer-2-peer marketplace for home cooked meals and cottage kitchens"
+  },
+  {
+    "title": "LOCL",
+    "description": "Google Business Profile and Listing Directories Management and Automation Platform",
+    "sidebar_position": 8
+  },
+  {
+    "sidebar_position": 1,
+    "title": "Knapsack",
+    "description": "The \"Design Once, Use Everywhere\" Design System Management Platform"
+  },
+  {
+    "sidebar_position": 4,
+    "sidebar_label": "Memorial Sloan Kettering",
+    "title": "Memorial Sloan Kettering Cancer Center Design System",
+    "description": "A design system consulting and rebuild for the Memorial Sloan Kettering Cancer Center website, https://www.mskcc.org/"
+  },
+  {
+    "title": "Pega",
+    "description": "The Bolt Design System",
+    "sidebar_position": 6
+  },
+  {
+    "sidebar_position": 7,
+    "title": "Puppet",
+    "description": "Frontend engineering and consulting on a rebrand and rebuild of puppet.com"
+  },
+  {
+    "title": "The House Plan Company",
+    "description": "A peer marketplace for buying and selling housing blueprints and plans.",
+    "sidebar_position": 1
+  },
+  {
+    "sidebar_position": 1,
+    "sidebar_label": "Tyson Steele",
+    "title": "Tyson Steele - Dentist Websites",
+    "description": "Implemented more than 80 custom designed web-portals for dental businesses."
+  },
+  {
+    "sidebar_position": 1
+  },
+  {
+    "title": "Enterprise Design System",
+    "description": "A design system powering hundred's of Nike's internal applications",
+    "sidebar_position": 2
+  },
+  {
+    "sidebar_position": 1,
+    "title": "Nike Design Systems",
+    "description": "Technical lead for Nike's Design Systems team, responsible for multiple design system initiatives for both consumer and internal facing products",
+    "meta_data": {
+      "foobar": "hi"
+    }
+  },
+  {
+    "title": "Streem Design System",
+    "description": "A design system to drive consistency and effeciency across Streem's.",
+    "sidebar_position": 2
+  },
+  {
+    "title": "Streem WebSDK",
+    "description": "A webSDK for streaming synchronized video, audio, and AR data using the WebRTC API.",
+    "sidebar_position": 2
+  }
+]
