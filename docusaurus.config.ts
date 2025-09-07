@@ -34,11 +34,7 @@ const config: Config = {
     [
       "classic",
       {
-        docs: {
-          path: "./projects",
-          routeBasePath: "/projects",
-          sidebarPath: "./sidebars.ts",
-        },
+        docs: false,
         blog: {
           showReadingTime: true,
           feedOptions: {
@@ -65,35 +61,32 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "Home",
+      title: "joekarasek.com",
       // logo: {
       //   alt: "My Site Logo",
       //   src: "img/logo.svg",
       // },
       items: [
-        {
-          type: "docSidebar",
-          sidebarId: "projectsSidebar",
-          position: "left",
-          label: "Projects",
-        },
-        { to: "/blog", label: "Articles", position: "left" },
-        { to: "/recommendations", label: "Recommendations", position: "left" },
-        {
-          href: "mailto:joseph.karasek@gmail.com",
-          label: "Email",
-          position: "right",
-        },
-        {
-          href: "https://github.com/joekarasek",
-          label: "GitHub",
-          position: "right",
-        },
-        {
-          href: "https://www.linkedin.com/in/joekarasek",
-          label: "Linkedin",
-          position: "right",
-        },
+        // {
+        //   type: "docSidebar",
+        //   sidebarId: "projectsSidebar",
+        //   position: "left",
+        //   label: "Projects",
+        // },
+        { to: "/blog", label: "writings", position: "left" },
+        { to: "/about-me", label: "about me", position: "left" },
+        { to: "/resume", label: "resume", position: "left" },
+        { to: "/place-holder", label: "connect", position: "right" },
+        // {
+        //   href: "mailto:joseph.karasek@gmail.com",
+        //   label: "Email",
+        //   position: "right",
+        // },
+        // {
+        //   href: "https://www.linkedin.com/in/joekarasek",
+        //   label: "Linkedin",
+        //   position: "right",
+        // },
       ],
     },
     footer: {
@@ -102,23 +95,23 @@ const config: Config = {
         {
           title: "Site",
           items: [
-            {
-              label: "Projects",
-              to: "/projects/intro",
-            },
+            // {
+            //   label: "Projects",
+            //   to: "/projects/intro",
+            // },
             {
               label: "Articles",
               to: "/blog",
             },
-            {
-              label: "Reviews",
-              // todo fix this link
-              to: "/",
-            },
+            // {
+            //   label: "Reviews",
+            //   // todo fix this link
+            //   to: "/",
+            // },
           ],
         },
         {
-          title: "Community",
+          title: "Get In Touch",
           items: [
             {
               label: "Linkedin",
@@ -133,10 +126,6 @@ const config: Config = {
         {
           title: "More",
           items: [
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
             {
               label: "Email",
               href: "mailto:joseph.karasek@gmail.com",
