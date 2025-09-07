@@ -143,7 +143,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()}. Built with Docusaurus 🦖.`,
+      copyright: `Copyright © ${new Date().getFullYear()}.`,
     },
     prism: {
       theme: prismThemes.github,
