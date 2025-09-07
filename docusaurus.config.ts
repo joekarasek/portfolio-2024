@@ -7,6 +7,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   future: {
     experimental_faster: true,
+    v4: true,
   },
   title: "Joseph Karasek",
   tagline: "Software Engineer and Design Technologist",
