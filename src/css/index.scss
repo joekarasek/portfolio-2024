@@ -5,13 +5,11 @@
 @import "../pages/index";
 
 // Sections
-@import "../sections/HomepageBannerSection/HomepageBannerSection";
 @import "../sections/HomepageSkillsSection/HomepageSkillsSection";
 @import "../sections/HomepageHighlightsSection/HomepageHighlightsSection";
 
 // Components
 @import "../components/AvatarBlock.scss";
-@import "../components/RecommendationCard.scss";
 
 // Utilities
 @import "./utilities";

@@ -41,11 +41,6 @@ const config: Config = {
             type: ["rss", "atom"],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
@@ -67,68 +62,33 @@ const config: Config = {
       //   src: "img/logo.svg",
       // },
       items: [
-        // {
-        //   type: "docSidebar",
-        //   sidebarId: "projectsSidebar",
-        //   position: "left",
-        //   label: "Projects",
-        // },
         { to: "/blog", label: "writings", position: "left" },
         { to: "/about-me", label: "about me", position: "left" },
         { to: "/resume", label: "resume", position: "left" },
         { to: "/place-holder", label: "connect", position: "right" },
-        // {
-        //   href: "mailto:joseph.karasek@gmail.com",
-        //   label: "Email",
-        //   position: "right",
-        // },
-        // {
-        //   href: "https://www.linkedin.com/in/joekarasek",
-        //   label: "Linkedin",
-        //   position: "right",
-        // },
       ],
     },
     footer: {
       style: "dark",
       links: [
         {
-          title: "Site",
+          title: "site",
           items: [
-            // {
-            //   label: "Projects",
-            //   to: "/projects/intro",
-            // },
-            {
-              label: "Articles",
-              to: "/blog",
-            },
-            // {
-            //   label: "Reviews",
-            //   // todo fix this link
-            //   to: "/",
-            // },
+            { to: "/blog", label: "writings" },
+            { to: "/about-me", label: "about me" },
+            { to: "/resume", label: "resume" },
           ],
         },
         {
-          title: "Get In Touch",
+          title: "get in touch",
           items: [
             {
-              label: "Linkedin",
-              href: "https://linkedin.com/in/joekarasek",
-            },
-            {
-              label: "Slack - Design Systems",
-              href: "https://design-systems.slack.com/team/U01QNRCNKSL",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Email",
               href: "mailto:joseph.karasek@gmail.com",
+              label: "email",
+            },
+            {
+              href: "https://www.linkedin.com/in/joekarasek",
+              label: "linkedin",
             },
           ],
         },
