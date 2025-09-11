@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
+import { AvatarBlock } from "@site/src/components/AvatarBlock";
 import "./style-guide.scss";
 
 interface ColorTableRowProps {
@@ -65,6 +66,13 @@ interface FontSizeTableRowProps {
   previewText: string;
 }
 
+interface ComponentTableRowProps {
+  componentName: string;
+  description: string;
+  usage: string;
+  preview: React.ReactNode;
+}
+
 const FontSizeTableRow: React.FC<FontSizeTableRowProps> = ({
   sizeName,
   token,
@@ -74,9 +82,6 @@ const FontSizeTableRow: React.FC<FontSizeTableRowProps> = ({
 }) => {
   return (
     <tr>
-      <td>
-        <span className="font-size-table__name">{sizeName}</span>
-      </td>
       <td>
         <span className="font-size-table__token">{token}</span>
       </td>
@@ -90,6 +95,30 @@ const FontSizeTableRow: React.FC<FontSizeTableRowProps> = ({
   );
 };
 
+const ComponentTableRow: React.FC<ComponentTableRowProps> = ({
+  componentName,
+  description,
+  usage,
+  preview,
+}) => {
+  return (
+    <tr>
+      <td>
+        <span className="component-table__name">{componentName}</span>
+      </td>
+      <td>
+        <span className="component-table__description">{description}</span>
+      </td>
+      <td>{usage}</td>
+      <td>
+        <div className="component-table__preview">
+          {preview}
+        </div>
+      </td>
+    </tr>
+  );
+};
+
 const StyleGuide = () => {
   return (
     <Layout
@@ -97,11 +126,14 @@ const StyleGuide = () => {
       description="Design system and style guide for joekarasek.com"
     >
       <main className="style-guide">
-        <div className="style-guide__header">
+        <div className="container margin-vert--xl">
+          <div className="style-guide__header">
           <h1 className="style-guide__title">Style Guide</h1>
-          <p className="style-guide__description">
-            This style guide serves two purposes: it documents the design language and visual standards used across this website, and it functions as a practical learning tool for understanding Docusaurus's theming system. By exploring the color palettes, typography, and component styles below, you can see how Docusaurus's CSS custom properties and Infima design tokens work together to create a cohesive, themeable design system.
-          </p>
+          <div className="style-guide__description">
+            <p>This style guide documents the design language and visual standards used across this website.</p>
+            <p>It also serves as a practical learning tool for understanding Docusaurus's theming system.</p>
+            <p>Explore the color palettes, typography, and component styles below to see how CSS custom properties and Infima design tokens create a cohesive, themeable design system.</p>
+          </div>
         </div>
 
         <div className="style-guide__content">
@@ -241,7 +273,6 @@ const StyleGuide = () => {
               <table className="font-size-table">
                 <thead>
                   <tr>
-                    <th>Size</th>
                     <th>Value</th>
                     <th>Usage</th>
                     <th>Preview</th>
@@ -260,7 +291,7 @@ const StyleGuide = () => {
                     token="--ifm-h1-font-size"
                     usage="Main headings, page titles"
                     previewClass="font-size-table__preview--h1"
-                    previewText="H1 Heading"
+                    previewText="H1&nbsp;Heading"
                   />
                   <FontSizeTableRow
                     sizeName="H2"
@@ -304,10 +335,273 @@ const StyleGuide = () => {
                     previewClass="font-size-table__preview--code"
                     previewText="const example = 'code';"
                   />
+                  <FontSizeTableRow
+                    sizeName="List"
+                    token="--ifm-font-size-list"
+                    usage="List items, secondary content"
+                    previewClass="font-size-table__preview--list"
+                    previewText="List item - The quick brown fox jumps over the lazy dog"
+                  />
                 </tbody>
               </table>
             </div>
           </section>
+
+          <section className="style-guide__section">
+            <h2 className="style-guide__section-title">Vertical Rhythm</h2>
+            <p className="style-guide__section-description">
+              Vertical rhythm creates consistent spacing and line heights throughout the design, ensuring optimal readability and visual harmony.
+            </p>
+
+            <div className="vertical-rhythm-table-container">
+              <table className="vertical-rhythm-table">
+                <thead>
+                  <tr>
+                    <th>Token</th>
+                    <th>Value</th>
+                    <th>Preview</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span className="vertical-rhythm-table__token">--ifm-line-height-base</span>
+                    </td>
+                    <td>
+                      <span className="vertical-rhythm-table__value">1.65</span>
+                    </td>
+                    <td>
+                      <div className="vertical-rhythm-table__preview vertical-rhythm-table__preview--base">
+                        This is an example of base line height. It provides comfortable reading with proper spacing between lines for body text and general content.
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="vertical-rhythm-table__token">--ifm-line-height-h1</span>
+                    </td>
+                    <td>
+                      <span className="vertical-rhythm-table__value">1.15</span>
+                    </td>
+                    <td>
+                      <div className="vertical-rhythm-table__preview vertical-rhythm-table__preview--h1">
+                        H1&nbsp;Heading
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="vertical-rhythm-table__token">--ifm-line-height-h2</span>
+                    </td>
+                    <td>
+                      <span className="vertical-rhythm-table__value">1.25</span>
+                    </td>
+                    <td>
+                      <div className="vertical-rhythm-table__preview vertical-rhythm-table__preview--h2">
+                        H2&nbsp;Heading
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="vertical-rhythm-table__token">--ifm-line-height-h3</span>
+                    </td>
+                    <td>
+                      <span className="vertical-rhythm-table__value">1.35</span>
+                    </td>
+                    <td>
+                      <div className="vertical-rhythm-table__preview vertical-rhythm-table__preview--h3">
+                        H3&nbsp;Heading
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="vertical-rhythm-table__token">--ifm-spacing-lg</span>
+                    </td>
+                    <td>
+                      <span className="vertical-rhythm-table__value">1.5rem</span>
+                    </td>
+                    <td>
+                      <div className="vertical-rhythm-table__preview vertical-rhythm-table__preview--spacing">
+                        <div className="vertical-rhythm-spacing-demo">
+                          <div className="vertical-rhythm-spacing-demo__item">Element 1</div>
+                          <div className="vertical-rhythm-spacing-demo__item">Element 2</div>
+                          <div className="vertical-rhythm-spacing-demo__item">Element 3</div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="vertical-rhythm-table__token">--ifm-spacing-md</span>
+                    </td>
+                    <td>
+                      <span className="vertical-rhythm-table__value">1rem</span>
+                    </td>
+                    <td>
+                      <div className="vertical-rhythm-table__preview vertical-rhythm-table__preview--spacing">
+                        <div className="vertical-rhythm-spacing-demo horizontal">
+                          <div className="vertical-rhythm-spacing-demo__item">Item</div>
+                          <div className="vertical-rhythm-spacing-demo__item">Item</div>
+                          <div className="vertical-rhythm-spacing-demo__item">Item</div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section className="style-guide__section">
+            <h2 className="style-guide__section-title">Components</h2>
+            <p className="style-guide__section-description">
+              Reusable UI components that follow the design system principles and can be used throughout the website.
+            </p>
+
+            <div className="component-table-container">
+              <table className="component-table">
+                <thead>
+                  <tr>
+                    <th>Component</th>
+                    <th>Description</th>
+                    <th>Usage</th>
+                    <th>Preview</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ComponentTableRow
+                    componentName="AvatarBlock"
+                    description="Displays a person's photo, name, title, and social links in a compact card format"
+                    usage="Author profiles, team member cards, contact information"
+                    preview={
+                      <AvatarBlock
+                        name="John Doe"
+                        title="Senior Software Engineer"
+                        link="https://example.com"
+                        image="/img/joe-professional.png"
+                        linkedin="https://linkedin.com/in/johndoe"
+                        github="https://github.com/johndoe"
+                      />
+                    }
+                  />
+                  <ComponentTableRow
+                    componentName="Tag"
+                    description="Small labels used to categorize content or indicate status"
+                    usage="Blog post tags, category labels, status indicators"
+                    preview={
+                      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                        <span style={{
+                          display: 'inline-block',
+                          padding: '0.25rem 0.75rem',
+                          backgroundColor: 'var(--ifm-color-primary-lightest)',
+                          color: 'var(--ifm-color-primary-darkest)',
+                          borderRadius: '1rem',
+                          fontSize: '0.875rem',
+                          fontWeight: '500'
+                        }}>
+                          Design Systems
+                        </span>
+                        <span style={{
+                          display: 'inline-block',
+                          padding: '0.25rem 0.75rem',
+                          backgroundColor: 'var(--ifm-color-emphasis-100)',
+                          color: 'var(--ifm-font-color-base)',
+                          borderRadius: '1rem',
+                          fontSize: '0.875rem',
+                          fontWeight: '500'
+                        }}>
+                          Development
+                        </span>
+                      </div>
+                    }
+                  />
+                </tbody>
+              </table>
+            </div>
+
+            <div className="component-showcase">
+              <h3 className="component-showcase__title">AvatarBlock Component</h3>
+              <p className="component-showcase__description">
+                The AvatarBlock component is used to display author information with social links. It's commonly used in blog posts and team pages.
+              </p>
+              
+              <div className="component-showcase__example">
+                <AvatarBlock
+                  name="Jane Smith"
+                  title="Design System Lead"
+                  link="https://example.com"
+                  image="/img/joe-professional.png"
+                  linkedin="https://linkedin.com/in/janesmith"
+                  github="https://github.com/janesmith"
+                />
+              </div>
+              
+              <div className="component-showcase__code">
+{`<AvatarBlock
+  name="Jane Smith"
+  title="Design System Lead"
+  link="https://example.com"
+  image="/img/joe-professional.png"
+  linkedin="https://linkedin.com/in/janesmith"
+  github="https://github.com/janesmith"
+/>`}
+              </div>
+            </div>
+
+            <div className="component-showcase">
+              <h3 className="component-showcase__title">Tag Component</h3>
+              <p className="component-showcase__description">
+                Tags are used to categorize content and provide visual context. They can be styled with different colors and sizes based on their importance.
+              </p>
+              
+              <div className="component-showcase__example">
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                  <span style={{
+                    display: 'inline-block',
+                    padding: '0.25rem 0.75rem',
+                    backgroundColor: 'var(--ifm-color-primary-lightest)',
+                    color: 'var(--ifm-color-primary-darkest)',
+                    borderRadius: '1rem',
+                    fontSize: '0.875rem',
+                    fontWeight: '500'
+                  }}>
+                    Primary Tag
+                  </span>
+                  <span style={{
+                    display: 'inline-block',
+                    padding: '0.25rem 0.75rem',
+                    backgroundColor: 'var(--ifm-color-emphasis-100)',
+                    color: 'var(--ifm-font-color-base)',
+                    borderRadius: '1rem',
+                    fontSize: '0.875rem',
+                    fontWeight: '500'
+                  }}>
+                    Secondary Tag
+                  </span>
+                  <span style={{
+                    display: 'inline-block',
+                    padding: '0.25rem 0.75rem',
+                    backgroundColor: 'var(--ifm-color-emphasis-200)',
+                    color: 'var(--ifm-font-color-base)',
+                    borderRadius: '1rem',
+                    fontSize: '0.875rem',
+                    fontWeight: '500'
+                  }}>
+                    Tertiary Tag
+                  </span>
+                </div>
+              </div>
+              
+              <div className="component-showcase__code">
+{`<span className="tag tag--primary">Primary Tag</span>
+<span className="tag tag--secondary">Secondary Tag</span>
+<span className="tag tag--tertiary">Tertiary Tag</span>`}
+              </div>
+            </div>
+          </section>
+        </div>
         </div>
       </main>
     </Layout>

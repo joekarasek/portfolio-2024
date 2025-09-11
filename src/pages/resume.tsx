@@ -9,9 +9,14 @@ const Resume = () => {
       description="Joseph Karasek - Lead Engineer and Design Technologist"
     >
       <main className="resume">
-        <div className="resume__header">
+        <div className="container margin-vert--xl">
+          <div className="resume__header">
           <h1 className="resume__name">Joseph Karasek</h1>
           <p className="resume__title">Lead Engineer and Design Technologist</p>
+          <p className="resume__summary">
+            Over a decade of experience building design systems and front-end architecture for companies ranging from startups to enterprise. 
+            Specialized in technical leadership, component library development, and scaling design systems across large organizations.
+          </p>
           <div className="resume__contact">
             <a href="mailto:joseph.karasek@gmail.com">joseph.karasek@gmail.com</a>
             <a href="https://www.linkedin.com/in/joekarasek" target="_blank" rel="noreferrer">
@@ -26,8 +31,10 @@ const Resume = () => {
           <div className="resume__job">
             <div className="resume__job-header">
               <h3 className="resume__job-title">Lead Engineer and Platform Owner</h3>
-              <div className="resume__job-company">Nike</div>
-              <div className="resume__job-dates">2021 – Present</div>
+              <div className="resume__job-meta">
+                <div className="resume__job-company">Nike</div>
+                <div className="resume__job-dates">2021 – Present</div>
+              </div>
             </div>
             <div className="resume__job-content">
               <p>
@@ -56,8 +63,10 @@ const Resume = () => {
           <div className="resume__job">
             <div className="resume__job-header">
               <h3 className="resume__job-title">Senior Engineer</h3>
-              <div className="resume__job-company">Streem</div>
-              <div className="resume__job-dates">2020 – 2021</div>
+              <div className="resume__job-meta">
+                <div className="resume__job-company">Streem</div>
+                <div className="resume__job-dates">2020 – 2021</div>
+              </div>
             </div>
             <div className="resume__job-content">
               <ul>
@@ -73,8 +82,10 @@ const Resume = () => {
           <div className="resume__job">
             <div className="resume__job-header">
               <h3 className="resume__job-title">Senior Engineer</h3>
-              <div className="resume__job-company">Knapsack (formerly Basalt)</div>
-              <div className="resume__job-dates">2017 – 2020</div>
+              <div className="resume__job-meta">
+                <div className="resume__job-company">Knapsack (formerly Basalt)</div>
+                <div className="resume__job-dates">2017 – 2020</div>
+              </div>
             </div>
             <div className="resume__job-content">
               <p>
@@ -95,8 +106,10 @@ const Resume = () => {
           <div className="resume__job">
             <div className="resume__job-header">
               <h3 className="resume__job-title">Web Engineer</h3>
-              <div className="resume__job-company">Hello World</div>
-              <div className="resume__job-dates">2016 – 2018</div>
+              <div className="resume__job-meta">
+                <div className="resume__job-company">Hello World</div>
+                <div className="resume__job-dates">2016 – 2018</div>
+              </div>
             </div>
             <div className="resume__job-content">
               <p>
@@ -129,6 +142,7 @@ const Resume = () => {
             </div>
           </div>
         </section>
+        </div>
       </main>
     </Layout>
   );

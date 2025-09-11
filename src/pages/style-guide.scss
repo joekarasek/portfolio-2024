@@ -11,7 +11,6 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   &__header {
     margin-bottom: $space-stack-m;
     text-align: left;
-    padding-top: $space-stack-s;
   }
 
   &__title {
@@ -22,10 +21,19 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   }
 
   &__description {
-    font-size: var(--ifm-h5-font-size);
+    font-size: var(--ifm-font-size-base);
     color: var(--ifm-color-content-secondary);
     max-width: 600px;
     margin: 0;
+    line-height: 1.6;
+
+    p {
+      margin: 0 0 1rem 0;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
 
@@ -461,6 +469,12 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
     font-size: var(--ifm-code-font-size);
     color: var(--ifm-font-color-base);
   }
+
+  &--list {
+    font-size: var(--ifm-font-size-list);
+    color: var(--ifm-color-emphasis-700);
+    line-height: 1.5;
+  }
 }
 
 // Dark mode adjustments for font size table
@@ -506,6 +520,355 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
 table thead tr {
   border-bottom: 1px solid var(--ifm-table-border-color);
   border-top: none;
+}
+
+// Vertical Rhythm Table Styles
+.vertical-rhythm-table-container {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.vertical-rhythm-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  overflow: hidden;
+
+  th {
+    background: var(--ifm-background-surface-color);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--ifm-heading-color);
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-100);
+    border-right: none;
+    border-left: none;
+    vertical-align: middle;
+    background: var(--ifm-background-color);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: var(--ifm-background-surface-color);
+  }
+
+  code {
+    font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: var(--ifm-code-font-size);
+    background: var(--ifm-background-surface-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: var(--ifm-color-primary);
+  }
+}
+
+.vertical-rhythm-table__name {
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+  font-size: 0.9rem;
+}
+
+.vertical-rhythm-table__token {
+  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  background: var(--ifm-background-surface-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--ifm-color-primary);
+  display: inline-block;
+}
+
+.vertical-rhythm-table__value {
+  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--ifm-font-color-base);
+  display: inline-block;
+  font-weight: 500;
+}
+
+.vertical-rhythm-table__preview {
+  font-family: var(--ifm-font-family-base);
+  color: var(--ifm-font-color-base);
+  padding: 0.75rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-100);
+  min-width: 200px;
+  font-weight: 400;
+
+  &--base {
+    font-size: var(--ifm-font-size-base);
+    line-height: var(--ifm-line-height-base);
+    letter-spacing: -0.01em;
+  }
+
+  &--h1 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h1-font-size);
+    font-weight: 700;
+    line-height: var(--ifm-line-height-h1);
+    letter-spacing: -0.03em;
+  }
+
+  &--h2 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h2-font-size);
+    font-weight: 600;
+    line-height: var(--ifm-line-height-h2);
+    letter-spacing: -0.025em;
+  }
+
+  &--h3 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h3-font-size);
+    font-weight: 600;
+    line-height: var(--ifm-line-height-h3);
+    letter-spacing: -0.02em;
+  }
+
+  &--spacing {
+    padding: 0.5rem;
+  }
+}
+
+.vertical-rhythm-spacing-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ifm-spacing-vertical);
+
+  &.horizontal {
+    flex-direction: row;
+    gap: var(--ifm-spacing-horizontal);
+  }
+
+  &__item {
+    padding: 0.5rem 0.75rem;
+    background: var(--ifm-color-primary-lightest);
+    color: var(--ifm-color-primary-darkest);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    min-width: 60px;
+  }
+}
+
+// Dark mode adjustments for vertical rhythm table
+[data-theme='dark'] {
+  .vertical-rhythm-table {
+    background: var(--ifm-background-color);
+    border-color: var(--ifm-color-emphasis-300);
+
+    th {
+      background: var(--ifm-background-surface-color);
+      border-bottom-color: var(--ifm-color-emphasis-300);
+    }
+
+    td {
+      background: var(--ifm-background-color);
+      border-bottom-color: var(--ifm-color-emphasis-200);
+    }
+
+    tr:hover td {
+      background: var(--ifm-background-surface-color);
+    }
+
+    code {
+      background: var(--ifm-background-surface-color);
+      color: var(--ifm-color-primary);
+    }
+  }
+
+  .vertical-rhythm-table__preview {
+    background: var(--ifm-background-surface-color);
+    border-color: var(--ifm-color-emphasis-200);
+    color: var(--ifm-font-color-base);
+  }
+
+  .vertical-rhythm-table__token {
+    background: var(--ifm-background-surface-color);
+    color: var(--ifm-color-primary);
+  }
+
+  .vertical-rhythm-table__value {
+    background: var(--ifm-color-emphasis-200);
+    color: var(--ifm-font-color-base);
+  }
+
+  .vertical-rhythm-spacing-demo__item {
+    background: var(--ifm-color-primary-lightest);
+    color: var(--ifm-color-primary-darkest);
+  }
+}
+
+// Component Table Styles
+.component-table-container {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.component-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  overflow: hidden;
+
+  th {
+    background: var(--ifm-background-surface-color);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--ifm-heading-color);
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-100);
+    border-right: none;
+    border-left: none;
+    vertical-align: top;
+    background: var(--ifm-background-color);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: var(--ifm-background-surface-color);
+  }
+
+  code {
+    font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: var(--ifm-code-font-size);
+    background: var(--ifm-background-surface-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: var(--ifm-color-primary);
+  }
+}
+
+.component-table__name {
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+  font-size: 0.9rem;
+}
+
+.component-table__description {
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.component-table__preview {
+  padding: 1rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-100);
+  min-width: 200px;
+}
+
+// Component showcase styles
+.component-showcase {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.component-showcase__title {
+  font-size: var(--ifm-h3-font-size);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.component-showcase__description {
+  color: var(--ifm-color-content-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.component-showcase__example {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--ifm-background-color);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-100);
+}
+
+.component-showcase__code {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 4px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: var(--ifm-code-font-size);
+  overflow-x: auto;
+}
+
+// Dark mode adjustments for component tables
+[data-theme='dark'] {
+  .component-table {
+    background: var(--ifm-background-color);
+    border-color: var(--ifm-color-emphasis-300);
+
+    th {
+      background: var(--ifm-background-surface-color);
+      border-bottom-color: var(--ifm-color-emphasis-300);
+    }
+
+    td {
+      background: var(--ifm-background-color);
+      border-bottom-color: var(--ifm-color-emphasis-200);
+    }
+
+    tr:hover td {
+      background: var(--ifm-background-surface-color);
+    }
+
+    code {
+      background: var(--ifm-background-surface-color);
+      color: var(--ifm-color-primary);
+    }
+  }
+
+  .component-showcase {
+    background: var(--ifm-background-surface-color);
+    border-color: var(--ifm-color-emphasis-300);
+  }
+
+  .component-showcase__example {
+    background: var(--ifm-background-color);
+    border-color: var(--ifm-color-emphasis-200);
+  }
+
+  .component-showcase__code {
+    background: var(--ifm-color-emphasis-200);
+  }
 }
 
 // Responsive design is handled by clamp() functions above

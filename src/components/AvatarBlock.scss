@@ -3,6 +3,11 @@
 
   &__photo {
     --ifm-avatar-photo-size: 3.6rem;
+    width: var(--ifm-avatar-photo-size);
+    height: var(--ifm-avatar-photo-size);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
   }
 
   &__intro {
