@@ -1,0 +1,198 @@
+@import '../css/utilities.scss';
+
+$space-stack-m: clamp(40px, calc(2.5rem + ((1vw - 6px) * 12)), 400px);
+$space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
+
+.style-guide {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 clamp(12px, 10vw, 120px);
+
+  &__header {
+    margin-bottom: $space-stack-m;
+    text-align: center;
+    padding-top: $space-stack-s;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--ifm-heading-color);
+  }
+
+  &__description {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--ifm-color-content-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+
+  &__section {
+    margin-bottom: $space-stack-m;
+
+    &:last-child {
+      margin-bottom: $space-stack-s;
+    }
+  }
+
+  &__section-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--ifm-heading-color);
+    border-bottom: 2px solid var(--ifm-color-emphasis-200);
+    padding-bottom: 0.5rem;
+  }
+
+  &__section-description {
+    font-size: 1.125rem;
+    color: var(--ifm-color-content-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+}
+
+// Color Table Styles
+.color-table-container {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.color-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  overflow: hidden;
+
+  th {
+    background: var(--ifm-color-emphasis-100);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--ifm-heading-color);
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-100);
+    vertical-align: middle;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover {
+    background: var(--ifm-color-emphasis-50);
+  }
+
+  code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    background: var(--ifm-color-emphasis-100);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: var(--ifm-color-primary);
+  }
+}
+
+.color-table__swatch {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.color-table__preview {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  flex-shrink: 0;
+
+  // Primary colors
+  &--primary {
+    background-color: var(--ifm-color-primary);
+  }
+  &--primary-dark {
+    background-color: var(--ifm-color-primary-dark);
+  }
+  &--primary-darker {
+    background-color: var(--ifm-color-primary-darker);
+  }
+  &--primary-darkest {
+    background-color: var(--ifm-color-primary-darkest);
+  }
+  &--primary-light {
+    background-color: var(--ifm-color-primary-light);
+  }
+  &--primary-lighter {
+    background-color: var(--ifm-color-primary-lighter);
+  }
+  &--primary-lightest {
+    background-color: var(--ifm-color-primary-lightest);
+  }
+
+  // Background colors
+  &--background {
+    background-color: var(--ifm-background-color);
+  }
+  &--background-surface {
+    background-color: var(--ifm-background-surface-color);
+  }
+
+  // Text colors
+  &--text-base {
+    background-color: var(--ifm-font-color-base);
+  }
+  &--text-secondary {
+    background-color: var(--ifm-font-color-secondary);
+  }
+}
+
+.color-table__name {
+  font-weight: 500;
+  color: var(--ifm-heading-color);
+  font-size: 0.9rem;
+}
+
+// Dark mode adjustments
+[data-theme='dark'] {
+  .style-guide {
+    &__section-title {
+      border-bottom-color: var(--ifm-color-emphasis-300);
+    }
+  }
+
+  .color-table {
+    background: var(--ifm-background-surface-color);
+    border-color: var(--ifm-color-emphasis-300);
+
+    th {
+      background: var(--ifm-color-emphasis-200);
+      border-bottom-color: var(--ifm-color-emphasis-300);
+    }
+
+    td {
+      border-bottom-color: var(--ifm-color-emphasis-200);
+    }
+
+    tr:hover {
+      background: var(--ifm-color-emphasis-100);
+    }
+
+    code {
+      background: var(--ifm-color-emphasis-200);
+    }
+  }
+}
+
+// Responsive design is handled by clamp() functions above

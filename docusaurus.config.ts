@@ -65,6 +65,7 @@ const config: Config = {
         { to: "/blog", label: "writings", position: "left" },
         { to: "/about-me", label: "about me", position: "left" },
         { to: "/resume", label: "resume", position: "left" },
+        { to: "/style-guide", label: "style guide", position: "left" },
         { to: "/place-holder", label: "connect", position: "right" },
       ],
     },
@@ -77,6 +78,7 @@ const config: Config = {
             { to: "/blog", label: "writings" },
             { to: "/about-me", label: "about me" },
             { to: "/resume", label: "resume" },
+            { to: "/style-guide", label: "style guide" },
           ],
         },
         {

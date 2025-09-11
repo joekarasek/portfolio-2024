@@ -1,0 +1,186 @@
+@import '../css/utilities.scss';
+
+$space-stack-m: clamp(40px, calc(2.5rem + ((1vw - 6px) * 12)), 400px);
+$space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
+
+@mixin display-font {
+  font-family: 'Carrois Gothic SC', system-ui;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.1rem;
+}
+
+.resume {
+  padding: 0 clamp(12px, 10vw, 120px);
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $space-stack-m;
+    padding-top: $space-stack-s;
+  }
+
+  &__name {
+    font-size: clamp(36px, 8vw, 48px);
+    margin-bottom: 8px;
+    @include display-font;
+  }
+
+  &__title {
+    font-size: clamp(18px, 4vw, 24px);
+    color: var(--ifm-color-emphasis-700);
+    margin-bottom: 16px;
+    @include display-font;
+  }
+
+  &__contact {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    a {
+      color: var(--ifm-link-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--ifm-link-hover-color);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__section {
+    margin-bottom: $space-stack-m;
+
+    &:last-child {
+      margin-bottom: $space-stack-s;
+    }
+  }
+
+  &__section-title {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--ifm-color-emphasis-200);
+    padding-bottom: 8px;
+    @include display-font;
+  }
+
+  &__job {
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--ifm-background-color);
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__job-header {
+    margin-bottom: 16px;
+  }
+
+  &__job-title {
+    font-size: clamp(18px, 3vw, 22px);
+    margin-bottom: 4px;
+    color: var(--ifm-color-primary);
+    @include display-font;
+  }
+
+  &__job-company {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ifm-color-emphasis-800);
+    margin-bottom: 2px;
+  }
+
+  &__job-dates {
+    font-size: 14px;
+    color: var(--ifm-color-emphasis-600);
+    font-style: italic;
+  }
+
+  &__job-content {
+    p {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      color: var(--ifm-color-emphasis-700);
+    }
+  }
+
+  &__education {
+    display: grid;
+    gap: 24px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__education-item {
+    padding: 20px;
+    background: var(--ifm-background-color);
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__education-degree {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--ifm-color-primary);
+    @include display-font;
+  }
+
+  &__education-school {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ifm-color-emphasis-800);
+    margin-bottom: 4px;
+  }
+
+  &__education-details {
+    font-size: 14px;
+    color: var(--ifm-color-emphasis-600);
+    font-style: italic;
+  }
+}
+
+// Dark mode adjustments
+[data-theme='dark'] {
+  .resume {
+    &__job,
+    &__education-item {
+      background: var(--ifm-background-surface-color);
+      border-color: var(--ifm-color-emphasis-300);
+
+      &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}

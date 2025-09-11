@@ -57,7 +57,3 @@ $space-stack-l: clamp(80px, calc(5rem + ((1vw - 6px) * 24)), 800px);
   padding: var(--ifm-footer-padding-vertical)
   var(--ifm-footer-padding-horizontal);
 }
-
-.footer--dark {
-  --ifm-footer-background-color: unset;
-}

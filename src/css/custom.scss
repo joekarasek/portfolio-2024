@@ -40,5 +40,5 @@
 }
 
 body {
-  font-size: clamp(16px, calc(16px + ((1vw + 9.4px) * 0.41)), 24px); // 940 to 1920 vw
+  font-size: clamp(14px, calc(14px + ((1vw + 9.4px) * 0.41)), 18px);
 }
