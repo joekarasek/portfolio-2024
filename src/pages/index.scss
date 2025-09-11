@@ -55,21 +55,21 @@ $space-4xl: 8rem;     // 128px
     opacity: 1;
     transform: translateY(0);
   }
+}
 
-  // Add subtle background pattern
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(74, 124, 89, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(107, 154, 122, 0.03) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-  }
+// Add subtle background pattern
+#__docusaurus:has(.home)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -200vh;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(74, 124, 89, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(107, 154, 122, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 // Hero banner with modern design
