@@ -62,34 +62,34 @@ const config: Config = {
       //   src: "img/logo.svg",
       // },
       items: [
-        { to: "/blog", label: "writings", position: "left" },
-        { to: "/about-me", label: "about me", position: "left" },
-        { to: "/resume", label: "resume", position: "left" },
-        { to: "/style-guide", label: "style guide", position: "left" },
-        { to: "/place-holder", label: "connect", position: "right" },
+        { to: "/blog", label: "Writings", position: "left" },
+        { to: "/about-me", label: "About Me", position: "left" },
+        { to: "/resume", label: "Resume", position: "left" },
+        { to: "/style-guide", label: "Style Guide", position: "left" },
+        { to: "/place-holder", label: "Connect", position: "right" },
       ],
     },
     footer: {
       links: [
         {
-          title: "site",
+          title: "Site",
           items: [
-            { to: "/blog", label: "writings" },
-            { to: "/about-me", label: "about me" },
-            { to: "/resume", label: "resume" },
-            { to: "/style-guide", label: "style guide" },
+            { to: "/blog", label: "Writings" },
+            { to: "/about-me", label: "About Me" },
+            { to: "/resume", label: "Resume" },
+            { to: "/style-guide", label: "Style Guide" },
           ],
         },
         {
-          title: "get in touch",
+          title: "Get In Touch",
           items: [
             {
               href: "mailto:joseph.karasek@gmail.com",
-              label: "email",
+              label: "Email",
             },
             {
               href: "https://www.linkedin.com/in/joekarasek",
-              label: "linkedin",
+              label: "LinkedIn",
             },
           ],
         },

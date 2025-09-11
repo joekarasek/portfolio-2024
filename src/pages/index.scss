@@ -1,4 +1,4 @@
-$space-stack-l: clamp(80px, calc(5rem + ((1vw - 6px) * 24)), 800px);
+$space-stack-l: 120px;
 
 @mixin display-font {
   font-family: var(--ifm-font-family-heading);
@@ -8,41 +8,59 @@ $space-stack-l: clamp(80px, calc(5rem + ((1vw - 6px) * 24)), 800px);
 }
 
 .home {
-  padding: 0 clamp(12px, 10vw, 120px);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 60px;
 }
 
 .banner {
   display: grid;
-  gap: 24px;
+  gap: 40px;
   justify-items: center;
   padding: $space-stack-l 0 0;
+  align-items: center;
+
+  @media screen and (width > 1200px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+
+    @media screen and (width > 1200px) {
+      text-align: left;
+    }
+  }
 
   &__name {
-    font-size: clamp(48px, 12vw, 80px);
+    font-size: 64px;
 
     @include display-font;
   }
 
   &__title {
-    grid-column: 1;
-    font-size: clamp(36px, 8vw, 52px);
+    font-size: 44px;
     line-height: 1;
 
     @include display-font;
+
+    &--tight {
+      margin-top: -20px;
+    }
   }
 
   &__image {
-    order: -1;
-    margin-bottom: 40px;
     max-height: 60vh;
+    width: 100%;
+    max-width: 400px;
+    object-fit: contain;
 
     @media screen and (width > 1200px) {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-      justify-self: center;
-      order: unset;
-
-      margin-bottom: 0;
+      max-width: 500px;
     }
   }
 }

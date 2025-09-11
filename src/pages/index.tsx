@@ -17,8 +17,9 @@ const Home = () => {
         <div className="banner">
           <div className="banner__text-wrapper">
             <h1 className="banner__name">Joe Karasek</h1>
-            <h2 className="banner__title">Software Engineer</h2>
-            <h2 className="banner__title">Design Technologist</h2>
+            <h2 className="banner__title">Technical Lead</h2>
+            <h2 className="banner__title banner__title--tight">Software Engineer</h2>
+            <h2 className="banner__title banner__title--tight">Design Technologist</h2>
           </div>
           <img
             src="/img/joe-professional.png"

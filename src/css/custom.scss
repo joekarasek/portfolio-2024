@@ -42,8 +42,8 @@
   --ifm-font-family-monospace: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   
   /* Infima Font Sizes */
-  --ifm-font-size-base: clamp(14px, 2vw, 18px);
-  --ifm-font-size-list: clamp(13px, calc(2vw - 2px), 16px);
+  --ifm-font-size-base: 16px;
+  --ifm-font-size-list: 14px;
   --ifm-h1-font-size: 3rem;
   --ifm-h2-font-size: 2.25rem;
   --ifm-h3-font-size: 1.75rem;
