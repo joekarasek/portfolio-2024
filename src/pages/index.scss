@@ -1,77 +1,444 @@
-$space-stack-l: 120px;
+// Modern spacing scale
+$space-xs: 0.5rem;    // 8px
+$space-sm: 1rem;      // 16px
+$space-md: 1.5rem;    // 24px
+$space-lg: 2rem;      // 32px
+$space-xl: 3rem;      // 48px
+$space-2xl: 4rem;     // 64px
+$space-3xl: 6rem;     // 96px
+$space-4xl: 8rem;     // 128px
 
+// Modern typography mixins
 @mixin display-font {
   font-family: var(--ifm-font-family-heading);
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
-  letter-spacing: -0.1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
+@mixin body-font {
+  font-family: var(--ifm-font-family-base);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+// Modern glassmorphism effect
+@mixin glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+// Soft gradient backgrounds
+@mixin soft-gradient {
+  background: linear-gradient(135deg, 
+    rgba(74, 124, 89, 0.05) 0%, 
+    rgba(107, 154, 122, 0.08) 50%, 
+    rgba(74, 124, 89, 0.05) 100%);
+}
+
+// Modern home container
 .home {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 $space-lg;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+
+  &.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  // Add subtle background pattern
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(74, 124, 89, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(107, 154, 122, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
 }
 
+// Hero banner with modern design
 .banner {
   display: grid;
-  gap: 40px;
+  gap: $space-3xl;
   justify-items: center;
-  padding: $space-stack-l 0 0;
+  padding: $space-4xl 0 $space-3xl;
   align-items: center;
+  position: relative;
+  min-height: 80vh;
 
   @media screen and (width > 1200px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.2fr 1fr;
+    gap: $space-4xl;
+    padding: $space-4xl 0 $space-3xl;
   }
 
   &__text-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: $space-md;
     text-align: center;
+    position: relative;
+    z-index: 2;
 
     @media screen and (width > 1200px) {
       text-align: left;
+      gap: $space-lg;
     }
   }
 
   &__name {
-    font-size: 64px;
-
+    font-size: clamp(3rem, 8vw, 5rem);
     @include display-font;
-  }
+    margin-bottom: $space-sm;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: $space-md;
+    white-space: nowrap;
+    flex-wrap: nowrap;
 
-  &__title {
-    font-size: 44px;
-    line-height: 1;
+    &--first {
+      background: linear-gradient(135deg, 
+        var(--ifm-color-primary) 0%, 
+        var(--ifm-color-primary-light) 50%, 
+        var(--ifm-color-primary-lighter) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      transform: translateX(-30px);
+      animation: slideInLeft 0.8s ease 0.2s forwards;
+      white-space: nowrap;
+    }
 
-    @include display-font;
-
-    &--tight {
-      margin-top: -20px;
+    &--last {
+      background: linear-gradient(135deg, 
+        var(--ifm-color-primary-lighter) 0%, 
+        var(--ifm-color-primary-light) 50%, 
+        var(--ifm-color-primary) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      transform: translateX(30px);
+      animation: slideInRight 0.8s ease 0.4s forwards;
+      white-space: nowrap;
     }
   }
 
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    @include display-font;
+    color: var(--ifm-font-color-secondary);
+    font-weight: 500;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
+    &--tight {
+      margin-top: -$space-sm;
+      font-size: clamp(1.25rem, 3.5vw, 2rem);
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease 0.8s forwards;
+  }
+
   &__image {
-    max-height: 60vh;
+    max-height: 70vh;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     object-fit: contain;
+    border-radius: 24px;
+    position: relative;
+    z-index: 2;
+    
+    // Modern image styling with subtle effects
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
 
     @media screen and (width > 1200px) {
       max-width: 500px;
     }
   }
+
+  &__image-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, 
+      rgba(74, 124, 89, 0.1) 0%, 
+      transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+  }
 }
 
+// Modern intro section
 .intro {
-  margin-bottom: 120px;
+  margin: $space-4xl 0;
+  padding: $space-3xl $space-xl;
+  border-radius: 24px;
+  @include soft-gradient;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease 1s forwards;
+
+  // Add subtle border
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    padding: 1px;
+    background: linear-gradient(135deg, 
+      rgba(74, 124, 89, 0.2) 0%, 
+      rgba(107, 154, 122, 0.1) 50%, 
+      rgba(74, 124, 89, 0.2) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: subtract;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: subtract;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    @include display-font;
+    color: var(--ifm-font-color-base);
+    margin-bottom: $space-lg;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+
+    @media screen and (width > 768px) {
+      flex-direction: row;
+      gap: $space-md;
+    }
+    
+    // Add subtle accent line
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -$space-sm;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, 
+        var(--ifm-color-primary) 0%, 
+        var(--ifm-color-primary-light) 100%);
+      border-radius: 2px;
+    }
+
+    &--greeting {
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideInLeft 0.6s ease 1.2s forwards;
+    }
+
+    &--name {
+      background: linear-gradient(135deg, 
+        var(--ifm-color-primary) 0%, 
+        var(--ifm-color-primary-light) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      transform: translateX(20px);
+      animation: slideInRight 0.6s ease 1.4s forwards;
+    }
+  }
+
+  &__content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease 1.6s forwards;
+  }
+
+  p {
+    @include body-font;
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    color: var(--ifm-font-color-secondary);
+    margin-bottom: $space-lg;
+    max-width: 600px;
+    line-height: 1.7;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--ifm-color-primary);
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: var(--ifm-color-primary-light);
+      transform: translateY(-1px);
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 }
 
+// Modern footer styling
 .footer {
-  background-color: var(--ifm-footer-background-color) !important;
+  background: linear-gradient(135deg, 
+    var(--ifm-background-color) 0%, 
+    var(--ifm-background-surface-color) 100%) !important;
   color: var(--ifm-footer-color);
-  padding: var(--ifm-footer-padding-vertical)
-  var(--ifm-footer-padding-horizontal);
+  padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal);
+  border-top: 1px solid rgba(74, 124, 89, 0.1);
+}
+
+// Responsive improvements
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 0 $space-md;
+  }
+  
+  .banner {
+    padding: $space-2xl 0 $space-xl;
+    min-height: 60vh;
+  }
+  
+  .intro {
+    padding: $space-xl $space-lg;
+    margin: $space-2xl 0;
+  }
+}
+
+// Keyframe animations
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+// Dark mode enhancements
+[data-theme='dark'] {
+  .banner__name--first,
+  .banner__name--last {
+    background: linear-gradient(135deg, 
+      var(--ifm-color-primary) 0%, 
+      var(--ifm-color-primary-light) 50%, 
+      var(--ifm-color-primary-lighter) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .intro__title--name {
+    background: linear-gradient(135deg, 
+      var(--ifm-color-primary) 0%, 
+      var(--ifm-color-primary-light) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .intro {
+    background: linear-gradient(135deg, 
+      rgba(107, 154, 122, 0.08) 0%, 
+      rgba(74, 124, 89, 0.05) 50%, 
+      rgba(107, 154, 122, 0.08) 100%);
+  }
 }
