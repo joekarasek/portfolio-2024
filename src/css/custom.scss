@@ -6,37 +6,71 @@
  * work well for content-centric websites.
  */
 
-/* Modern engineer-focused color palette */
+/* Professional muted color palette */
 :root {
-  --ifm-color-primary: #2563eb; /* modern blue */
-  --ifm-color-primary-dark: #1e40af;
-  --ifm-color-primary-darker: #1e3a8a;
-  --ifm-color-primary-darkest: #172554;
-  --ifm-color-primary-light: #3b82f6;
-  --ifm-color-primary-lighter: #60a5fa;
-  --ifm-color-primary-lightest: #93c5fd;
+  /* Primary green - bright and attention-grabbing */
+  --ifm-color-primary: #4a7c59; /* forest green */
+  --ifm-color-primary-dark: #3d6549;
+  --ifm-color-primary-darker: #2f4e38;
+  --ifm-color-primary-darkest: #213727;
+  --ifm-color-primary-light: #5d8f6b;
+  --ifm-color-primary-lighter: #7aa085;
+  --ifm-color-primary-lightest: #97b19f;
+  
+  /* Background colors - original values */
   --ifm-background-color: #f8fafc; /* light slate */
   --ifm-background-surface-color: #f1f5f9;
-  --ifm-font-color-base: #1e293b; /* slate gray */
-  --ifm-font-color-secondary: #64748b;
+  
+  /* Text colors using your professional palette */
+  --ifm-font-color-base: #2D2A1B; /* black-olive */
+  --ifm-font-color-secondary: #554026; /* caf-noir */
+  
+  /* Additional professional colors */
+  --ifm-color-emphasis-100: #B7AFA6; /* silver */
+  --ifm-color-emphasis-200: #9a9187; /* darker silver */
+  --ifm-color-emphasis-300: #7d7469; /* even darker silver */
+  --ifm-color-emphasis-400: #60574c; /* caf-noir */
+  --ifm-color-emphasis-500: #433a2f; /* darker caf-noir */
+  --ifm-color-emphasis-600: #2D2A1B; /* black-olive */
+  --ifm-color-emphasis-700: #24170A; /* licorice */
+  --ifm-color-emphasis-800: #1a0f07; /* darker licorice */
+  --ifm-color-emphasis-900: #100a04; /* darkest licorice */
+  
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgb(37 99 235 / 10%);
+  --docusaurus-highlighted-code-line-bg: rgb(74 124 89 / 10%);
   --ifm-footer-background-color: var(--ifm-background-surface-color);
 }
 
 [data-theme='dark'] {
+  /* Dark mode - original background values */
   --ifm-background-color: #121212; /* deep navy */
   --ifm-background-surface-color: #1c1a17;
-  --ifm-color-primary: #60a5fa;
-  --ifm-color-primary-dark: #3b82f6;
-  --ifm-color-primary-darker: #2563eb;
-  --ifm-color-primary-darkest: #1e40af;
-  --ifm-color-primary-light: #93c5fd;
-  --ifm-color-primary-lighter: #bfdbfe;
-  --ifm-color-primary-lightest: #dbeafe;
-  --ifm-font-color-base: #f1f5f9;
-  --ifm-font-color-secondary: #94a3b8;
-  --docusaurus-highlighted-code-line-bg: rgb(96 165 250 / 15%);
+  
+  /* Brighter green for dark mode */
+  --ifm-color-primary: #6b9a7a; /* lighter forest green */
+  --ifm-color-primary-dark: #5d8f6b;
+  --ifm-color-primary-darker: #4a7c59;
+  --ifm-color-primary-darkest: #3d6549;
+  --ifm-color-primary-light: #7aa085;
+  --ifm-color-primary-lighter: #97b19f;
+  --ifm-color-primary-lightest: #b4c2b9;
+  
+  /* Text colors for dark mode */
+  --ifm-font-color-base: #B7AFA6; /* silver */
+  --ifm-font-color-secondary: #9a9187; /* darker silver */
+  
+  /* Dark mode emphasis colors */
+  --ifm-color-emphasis-100: #2D2A1B; /* black-olive */
+  --ifm-color-emphasis-200: #303128; /* black-olive-2 */
+  --ifm-color-emphasis-300: #554026; /* caf-noir */
+  --ifm-color-emphasis-400: #6b5a4a; /* lighter caf-noir */
+  --ifm-color-emphasis-500: #81745e; /* even lighter caf-noir */
+  --ifm-color-emphasis-600: #978e72; /* silver-based */
+  --ifm-color-emphasis-700: #B7AFA6; /* silver */
+  --ifm-color-emphasis-800: #c5beb6; /* lighter silver */
+  --ifm-color-emphasis-900: #d3cdc6; /* lightest silver */
+  
+  --docusaurus-highlighted-code-line-bg: rgb(107 154 122 / 15%);
 }
 
 body {

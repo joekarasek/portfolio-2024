@@ -42,7 +42,7 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--ifm-heading-color);
-    border-bottom: 2px solid var(--ifm-color-emphasis-200);
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
     padding-bottom: 0.5rem;
   }
 
@@ -69,36 +69,38 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   overflow: hidden;
 
   th {
-    background: var(--ifm-color-emphasis-100);
+    background: var(--ifm-background-surface-color);
     padding: 1rem;
     text-align: left;
     font-weight: 600;
     color: var(--ifm-heading-color);
     border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    border-right: none;
+    border-left: none;
+    border-top: none;
   }
 
   td {
     padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--ifm-color-emphasis-100);
+    border-right: none;
+    border-left: none;
     vertical-align: middle;
-
-    &:last-child {
-      border-right: none;
-    }
+    background: var(--ifm-background-color);
   }
 
   tr:last-child td {
     border-bottom: none;
   }
 
-  tr:hover {
-    background: var(--ifm-color-emphasis-50);
+  tr:hover td {
+    background: var(--ifm-background-surface-color);
   }
 
   code {
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     font-size: 0.875rem;
-    background: var(--ifm-color-emphasis-100);
+    background: var(--ifm-background-surface-color);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     color: var(--ifm-color-primary);
@@ -173,26 +175,34 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   }
 
   .color-table {
-    background: var(--ifm-background-surface-color);
+    background: var(--ifm-background-color);
     border-color: var(--ifm-color-emphasis-300);
 
     th {
-      background: var(--ifm-color-emphasis-200);
+      background: var(--ifm-background-surface-color);
       border-bottom-color: var(--ifm-color-emphasis-300);
     }
 
     td {
+      background: var(--ifm-background-color);
       border-bottom-color: var(--ifm-color-emphasis-200);
     }
 
-    tr:hover {
-      background: var(--ifm-color-emphasis-100);
+    tr:hover td {
+      background: var(--ifm-background-surface-color);
     }
 
     code {
-      background: var(--ifm-color-emphasis-200);
+      background: var(--ifm-background-surface-color);
+      color: var(--ifm-color-primary);
     }
   }
+}
+
+// override infima table styles
+table thead tr {
+  border-bottom: 1px solid var(--ifm-table-border-color);
+  border-top: none;
 }
 
 // Responsive design is handled by clamp() functions above
