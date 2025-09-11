@@ -15,14 +15,14 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   }
 
   &__title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: var(--ifm-h1-font-size);
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--ifm-heading-color);
   }
 
   &__description {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-size: var(--ifm-h5-font-size);
     color: var(--ifm-color-content-secondary);
     max-width: 600px;
     margin: 0;
@@ -38,7 +38,7 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   }
 
   &__section-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: var(--ifm-h2-font-size);
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--ifm-heading-color);
@@ -47,7 +47,7 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   }
 
   &__section-description {
-    font-size: 1.125rem;
+    font-size: var(--ifm-font-size-base);
     color: var(--ifm-color-content-secondary);
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -99,7 +99,7 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
 
   code {
     font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    font-size: 0.875rem;
+    font-size: var(--ifm-code-font-size);
     background: var(--ifm-background-surface-color);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
@@ -244,7 +244,7 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
 
   code {
     font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    font-size: 0.875rem;
+    font-size: var(--ifm-code-font-size);
     background: var(--ifm-background-surface-color);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
@@ -264,7 +264,7 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
 }
 
 .font-table__preview {
-  font-size: 1rem;
+  font-size: var(--ifm-font-size-base);
   line-height: 1.4;
   color: var(--ifm-font-color-base);
   padding: 0.5rem;
@@ -326,6 +326,177 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   }
 
   .font-table__name {
+    background: var(--ifm-background-surface-color);
+    color: var(--ifm-color-primary);
+  }
+}
+
+// Font Size Table Styles
+.font-size-table-container {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.font-size-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  overflow: hidden;
+
+  th {
+    background: var(--ifm-background-surface-color);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--ifm-heading-color);
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-100);
+    border-right: none;
+    border-left: none;
+    vertical-align: middle;
+    background: var(--ifm-background-color);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: var(--ifm-background-surface-color);
+  }
+}
+
+.font-size-table__name {
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+  font-size: 0.9rem;
+}
+
+.font-size-table__token {
+  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  background: var(--ifm-background-surface-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--ifm-color-primary);
+  display: inline-block;
+}
+
+.font-size-table__preview {
+  font-family: var(--ifm-font-family-base);
+  line-height: 1.4;
+  color: var(--ifm-font-color-base);
+  padding: 0.75rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-100);
+  min-width: 200px;
+  font-weight: 400;
+
+  &--base {
+    font-size: var(--ifm-font-size-base);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  &--h1 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h1-font-size);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  &--h2 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h2-font-size);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  &--h3 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h3-font-size);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  &--h4 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h4-font-size);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  &--h5 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h5-font-size);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.4;
+  }
+
+  &--h6 {
+    font-family: var(--ifm-font-family-heading);
+    font-size: var(--ifm-h6-font-size);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  &--code {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: var(--ifm-code-font-size);
+    color: var(--ifm-font-color-base);
+  }
+}
+
+// Dark mode adjustments for font size table
+[data-theme='dark'] {
+  .font-size-table {
+    background: var(--ifm-background-color);
+    border-color: var(--ifm-color-emphasis-300);
+
+    th {
+      background: var(--ifm-background-surface-color);
+      border-bottom-color: var(--ifm-color-emphasis-300);
+    }
+
+    td {
+      background: var(--ifm-background-color);
+      border-bottom-color: var(--ifm-color-emphasis-200);
+    }
+
+    tr:hover td {
+      background: var(--ifm-background-surface-color);
+    }
+  }
+
+  .font-size-table__preview {
+    background: var(--ifm-background-surface-color);
+    border-color: var(--ifm-color-emphasis-200);
+    color: var(--ifm-font-color-base);
+
+    &--code {
+      background: var(--ifm-color-emphasis-200);
+      color: var(--ifm-color-primary);
+      border-color: var(--ifm-color-emphasis-300);
+    }
+  }
+
+  .font-size-table__token {
     background: var(--ifm-background-surface-color);
     color: var(--ifm-color-primary);
   }

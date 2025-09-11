@@ -29,6 +29,67 @@ const ColorTableRow: React.FC<ColorTableRowProps> = ({
   );
 };
 
+interface FontTableRowProps {
+  token: string;
+  usage: string;
+  previewClass: string;
+  previewText: string;
+}
+
+const FontTableRow: React.FC<FontTableRowProps> = ({
+  token,
+  usage,
+  previewClass,
+  previewText,
+}) => {
+  return (
+    <tr>
+      <td>
+        <span className="font-table__name">{token}</span>
+      </td>
+      <td>{usage}</td>
+      <td>
+        <div className={`font-table__preview ${previewClass}`}>
+          {previewText}
+        </div>
+      </td>
+    </tr>
+  );
+};
+
+interface FontSizeTableRowProps {
+  sizeName: string;
+  token: string;
+  usage: string;
+  previewClass: string;
+  previewText: string;
+}
+
+const FontSizeTableRow: React.FC<FontSizeTableRowProps> = ({
+  sizeName,
+  token,
+  usage,
+  previewClass,
+  previewText,
+}) => {
+  return (
+    <tr>
+      <td>
+        <span className="font-size-table__name">{sizeName}</span>
+      </td>
+      <td>
+        <span className="font-size-table__token">{token}</span>
+      </td>
+      <td>{usage}</td>
+      <td>
+        <div className={`font-size-table__preview ${previewClass}`}>
+          {previewText}
+        </div>
+      </td>
+    </tr>
+  );
+};
+
 const StyleGuide = () => {
   return (
     <Layout
@@ -147,39 +208,102 @@ const StyleGuide = () => {
                   </tr>
                 </thead>
                 <tbody>
+                  <FontTableRow
+                    token="--ifm-font-family-heading"
+                    usage="Headings, display text"
+                    previewClass="font-table__preview--heading"
+                    previewText="The quick brown fox jumps over the lazy dog"
+                  />
+                  <FontTableRow
+                    token="--ifm-font-family-base"
+                    usage="Body text, UI elements"
+                    previewClass="font-table__preview--body"
+                    previewText="The quick brown fox jumps over the lazy dog"
+                  />
+                  <FontTableRow
+                    token="--ifm-font-family-monospace"
+                    usage="Code, technical content"
+                    previewClass="font-table__preview--mono"
+                    previewText="The quick brown fox jumps over the lazy dog"
+                  />
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section className="style-guide__section">
+            <h2 className="style-guide__section-title">Font Sizes</h2>
+            <p className="style-guide__section-description">
+              Typography scale using responsive font sizes that adapt to different screen sizes for optimal readability.
+            </p>
+
+            <div className="font-size-table-container">
+              <table className="font-size-table">
+                <thead>
                   <tr>
-                    <td>
-                      <span className="font-table__name">--ifm-font-family-heading</span>
-                    </td>
-                    <td>Headings, display text</td>
-                    <td>
-                      <div className="font-table__preview font-table__preview--heading">
-                        The quick brown fox jumps over the lazy dog
-                      </div>
-                    </td>
+                    <th>Size</th>
+                    <th>Value</th>
+                    <th>Usage</th>
+                    <th>Preview</th>
                   </tr>
-                  <tr>
-                    <td>
-                      <span className="font-table__name">--ifm-font-family-base</span>
-                    </td>
-                    <td>Body text, UI elements</td>
-                    <td>
-                      <div className="font-table__preview font-table__preview--body">
-                        The quick brown fox jumps over the lazy dog
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span className="font-table__name">--ifm-font-family-monospace</span>
-                    </td>
-                    <td>Code, technical content</td>
-                    <td>
-                      <div className="font-table__preview font-table__preview--mono">
-                        The quick brown fox jumps over the lazy dog
-                      </div>
-                    </td>
-                  </tr>
+                </thead>
+                <tbody>
+                  <FontSizeTableRow
+                    sizeName="Base"
+                    token="--ifm-font-size-base"
+                    usage="Base font size for body text, paragraphs"
+                    previewClass="font-size-table__preview--base"
+                    previewText="Base - The quick brown fox jumps over the lazy dog"
+                  />
+                  <FontSizeTableRow
+                    sizeName="H1"
+                    token="--ifm-h1-font-size"
+                    usage="Main headings, page titles"
+                    previewClass="font-size-table__preview--h1"
+                    previewText="H1 Heading"
+                  />
+                  <FontSizeTableRow
+                    sizeName="H2"
+                    token="--ifm-h2-font-size"
+                    usage="Section headings"
+                    previewClass="font-size-table__preview--h2"
+                    previewText="H2 Heading"
+                  />
+                  <FontSizeTableRow
+                    sizeName="H3"
+                    token="--ifm-h3-font-size"
+                    usage="Subsection headings"
+                    previewClass="font-size-table__preview--h3"
+                    previewText="H3 Heading"
+                  />
+                  <FontSizeTableRow
+                    sizeName="H4"
+                    token="--ifm-h4-font-size"
+                    usage="Minor headings"
+                    previewClass="font-size-table__preview--h4"
+                    previewText="H4 Heading"
+                  />
+                  <FontSizeTableRow
+                    sizeName="H5"
+                    token="--ifm-h5-font-size"
+                    usage="Small headings"
+                    previewClass="font-size-table__preview--h5"
+                    previewText="H5 Heading"
+                  />
+                  <FontSizeTableRow
+                    sizeName="H6"
+                    token="--ifm-h6-font-size"
+                    usage="Smallest headings"
+                    previewClass="font-size-table__preview--h6"
+                    previewText="H6 Heading"
+                  />
+                  <FontSizeTableRow
+                    sizeName="Code"
+                    token="--ifm-code-font-size"
+                    usage="Inline code, technical content"
+                    previewClass="font-size-table__preview--code"
+                    previewText="const example = 'code';"
+                  />
                 </tbody>
               </table>
             </div>
