@@ -2,6 +2,33 @@ import React from "react";
 import Layout from "@theme/Layout";
 import "./style-guide.scss";
 
+interface ColorTableRowProps {
+  colorName: string;
+  token: string;
+  usage: string;
+  previewClass: string;
+}
+
+const ColorTableRow: React.FC<ColorTableRowProps> = ({
+  colorName,
+  token,
+  usage,
+  previewClass,
+}) => {
+  return (
+    <tr>
+      <td>
+        <div className="color-table__swatch">
+          <div className={`color-table__preview ${previewClass}`}></div>
+          <span className="color-table__name">{colorName}</span>
+        </div>
+      </td>
+      <td><code>{token}</code></td>
+      <td>{usage}</td>
+    </tr>
+  );
+};
+
 const StyleGuide = () => {
   return (
     <Layout
@@ -12,7 +39,7 @@ const StyleGuide = () => {
         <div className="style-guide__header">
           <h1 className="style-guide__title">Style Guide</h1>
           <p className="style-guide__description">
-            A comprehensive guide to the design system and visual standards used across this website.
+            This style guide serves two purposes: it documents the design language and visual standards used across this website, and it functions as a practical learning tool for understanding Docusaurus's theming system. By exploring the color palettes, typography, and component styles below, you can see how Docusaurus's CSS custom properties and Infima design tokens work together to create a cohesive, themeable design system.
           </p>
         </div>
 
@@ -28,120 +55,130 @@ const StyleGuide = () => {
                 <thead>
                   <tr>
                     <th>Color</th>
-                    <th>CSS Variable</th>
+                    <th>Token</th>
                     <th>Usage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ColorTableRow
+                    colorName="Primary"
+                    token="--ifm-color-primary"
+                    usage="Main brand color, links, buttons"
+                    previewClass="color-table__preview--primary"
+                  />
+                  <ColorTableRow
+                    colorName="Primary Dark"
+                    token="--ifm-color-primary-dark"
+                    usage="Hover states, active elements"
+                    previewClass="color-table__preview--primary-dark"
+                  />
+                  <ColorTableRow
+                    colorName="Primary Darker"
+                    token="--ifm-color-primary-darker"
+                    usage="Pressed states, emphasis"
+                    previewClass="color-table__preview--primary-darker"
+                  />
+                  <ColorTableRow
+                    colorName="Primary Darkest"
+                    token="--ifm-color-primary-darkest"
+                    usage="Text on light backgrounds"
+                    previewClass="color-table__preview--primary-darkest"
+                  />
+                  <ColorTableRow
+                    colorName="Primary Light"
+                    token="--ifm-color-primary-light"
+                    usage="Subtle highlights, borders"
+                    previewClass="color-table__preview--primary-light"
+                  />
+                  <ColorTableRow
+                    colorName="Primary Lighter"
+                    token="--ifm-color-primary-lighter"
+                    usage="Light backgrounds, subtle accents"
+                    previewClass="color-table__preview--primary-lighter"
+                  />
+                  <ColorTableRow
+                    colorName="Primary Lightest"
+                    token="--ifm-color-primary-lightest"
+                    usage="Very light backgrounds, disabled states"
+                    previewClass="color-table__preview--primary-lightest"
+                  />
+                  <ColorTableRow
+                    colorName="Background"
+                    token="--ifm-background-color"
+                    usage="Main page background"
+                    previewClass="color-table__preview--background"
+                  />
+                  <ColorTableRow
+                    colorName="Background Surface"
+                    token="--ifm-background-surface-color"
+                    usage="Cards, panels, elevated surfaces"
+                    previewClass="color-table__preview--background-surface"
+                  />
+                  <ColorTableRow
+                    colorName="Base Text"
+                    token="--ifm-font-color-base"
+                    usage="Primary text content"
+                    previewClass="color-table__preview--text-base"
+                  />
+                  <ColorTableRow
+                    colorName="Secondary Text"
+                    token="--ifm-font-color-secondary"
+                    usage="Supporting text, captions"
+                    previewClass="color-table__preview--text-secondary"
+                  />
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section className="style-guide__section">
+            <h2 className="style-guide__section-title">Font Families</h2>
+            <p className="style-guide__section-description">
+              Typography system using carefully selected font families for optimal readability and visual hierarchy.
+            </p>
+
+            <div className="font-table-container">
+              <table className="font-table">
+                <thead>
+                  <tr>
+                    <th>Token</th>
+                    <th>Usage</th>
+                    <th>Preview</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--primary"></div>
-                        <span className="color-table__name">Primary</span>
+                      <span className="font-table__name">--ifm-font-family-heading</span>
+                    </td>
+                    <td>Headings, display text</td>
+                    <td>
+                      <div className="font-table__preview font-table__preview--heading">
+                        The quick brown fox jumps over the lazy dog
                       </div>
                     </td>
-                    <td><code>var(--ifm-color-primary)</code></td>
-                    <td>Main brand color, links, buttons</td>
                   </tr>
                   <tr>
                     <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--primary-dark"></div>
-                        <span className="color-table__name">Primary Dark</span>
+                      <span className="font-table__name">--ifm-font-family-base</span>
+                    </td>
+                    <td>Body text, UI elements</td>
+                    <td>
+                      <div className="font-table__preview font-table__preview--body">
+                        The quick brown fox jumps over the lazy dog
                       </div>
                     </td>
-                    <td><code>var(--ifm-color-primary-dark)</code></td>
-                    <td>Hover states, active elements</td>
                   </tr>
                   <tr>
                     <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--primary-darker"></div>
-                        <span className="color-table__name">Primary Darker</span>
-                      </div>
+                      <span className="font-table__name">--ifm-font-family-monospace</span>
                     </td>
-                    <td><code>var(--ifm-color-primary-darker)</code></td>
-                    <td>Pressed states, emphasis</td>
-                  </tr>
-                  <tr>
+                    <td>Code, technical content</td>
                     <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--primary-darkest"></div>
-                        <span className="color-table__name">Primary Darkest</span>
+                      <div className="font-table__preview font-table__preview--mono">
+                        The quick brown fox jumps over the lazy dog
                       </div>
                     </td>
-                    <td><code>var(--ifm-color-primary-darkest)</code></td>
-                    <td>Text on light backgrounds</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--primary-light"></div>
-                        <span className="color-table__name">Primary Light</span>
-                      </div>
-                    </td>
-                    <td><code>var(--ifm-color-primary-light)</code></td>
-                    <td>Subtle highlights, borders</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--primary-lighter"></div>
-                        <span className="color-table__name">Primary Lighter</span>
-                      </div>
-                    </td>
-                    <td><code>var(--ifm-color-primary-lighter)</code></td>
-                    <td>Light backgrounds, subtle accents</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--primary-lightest"></div>
-                        <span className="color-table__name">Primary Lightest</span>
-                      </div>
-                    </td>
-                    <td><code>var(--ifm-color-primary-lightest)</code></td>
-                    <td>Very light backgrounds, disabled states</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--background"></div>
-                        <span className="color-table__name">Background</span>
-                      </div>
-                    </td>
-                    <td><code>var(--ifm-background-color)</code></td>
-                    <td>Main page background</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--background-surface"></div>
-                        <span className="color-table__name">Background Surface</span>
-                      </div>
-                    </td>
-                    <td><code>var(--ifm-background-surface-color)</code></td>
-                    <td>Cards, panels, elevated surfaces</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--text-base"></div>
-                        <span className="color-table__name">Base Text</span>
-                      </div>
-                    </td>
-                    <td><code>var(--ifm-font-color-base)</code></td>
-                    <td>Primary text content</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="color-table__swatch">
-                        <div className="color-table__preview color-table__preview--text-secondary"></div>
-                        <span className="color-table__name">Secondary Text</span>
-                      </div>
-                    </td>
-                    <td><code>var(--ifm-font-color-secondary)</code></td>
-                    <td>Supporting text, captions</td>
                   </tr>
                 </tbody>
               </table>

@@ -1,7 +1,7 @@
 $space-stack-l: clamp(80px, calc(5rem + ((1vw - 6px) * 24)), 800px);
 
 @mixin display-font {
-  font-family: 'Carrois Gothic SC', system-ui;
+  font-family: var(--ifm-font-family-heading);
   font-weight: 400;
   font-style: normal;
   letter-spacing: -0.1rem;
