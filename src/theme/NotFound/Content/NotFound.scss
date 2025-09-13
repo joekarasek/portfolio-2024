@@ -100,7 +100,7 @@
 
   &__wip-notice {
     padding: 1.5rem;
-    background-color: var(--ifm-color-emphasis-100);
+    background-color: white;
     border-radius: 8px;
     border-left: 4px solid var(--ifm-color-primary);
     
@@ -121,7 +121,7 @@
 [data-theme='dark'] {
   .not-found {
     &__wip-notice {
-      background-color: var(--ifm-color-emphasis-200);
+      background-color: var(--ifm-color-content-inverse);
       border-left-color: var(--ifm-color-primary);
       
       p {
