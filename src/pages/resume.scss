@@ -1,4 +1,4 @@
-@import '../css/utilities.scss';
+@use '../css/utilities.scss';
 
 $space-stack-m: clamp(40px, calc(2.5rem + ((1vw - 6px) * 12)), 400px);
 $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);

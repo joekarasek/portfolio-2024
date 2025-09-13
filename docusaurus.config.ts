@@ -56,6 +56,16 @@ const config: Config = {
     ],
   ],
 
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap",
+        rel: "stylesheet",
+      },
+    },
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",

@@ -1,11 +1,11 @@
 // Globals
-@import "./custom";
+@use "./custom";
 
 // Pages
-@import "../pages/index";
+@use "../pages/index";
 
 // Components
-@import "../components/AvatarBlock.scss";
+@use "../components/AvatarBlock.scss";
 
 // Utilities
-@import "./utilities";
+@use "./utilities";
