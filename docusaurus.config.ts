@@ -55,6 +55,10 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
+    googleAnalytics: {
+      trackingID: "G-PYKH289910", // Replace with your Google Analytics tracking ID
+      anonymizeIP: true, // Optional: anonymize IP addresses
+    },
     navbar: {
       title: "joekarasek.com",
       // logo: {
