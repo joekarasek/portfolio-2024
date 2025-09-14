@@ -49,7 +49,7 @@ const config: Config = {
           customCss: "./src/css/index.scss",
         },
         googleAnalytics: {
-          trackingID: "G-PYKH289910",
+          trackingID: "G-YC6Q70EYCW",
           anonymizeIP: true,
         },
       } satisfies Preset.Options,
