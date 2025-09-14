@@ -80,7 +80,7 @@ const config: Config = {
         { to: "/about-me", label: "About Me", position: "left" },
         { to: "/resume", label: "Resume", position: "left" },
         { to: "/style-guide", label: "Style Guide", position: "left" },
-        { to: "/place-holder", label: "Connect", position: "right" },
+        { to: "/contact", label: "Connect", position: "right" },
       ],
     },
     footer: {
@@ -92,6 +92,7 @@ const config: Config = {
             { to: "/about-me", label: "About Me" },
             { to: "/resume", label: "Resume" },
             { to: "/style-guide", label: "Style Guide" },
+            { to: "/contact", label: "Contact" },
           ],
         },
         {
