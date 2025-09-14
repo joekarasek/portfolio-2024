@@ -52,6 +52,10 @@ const config: Config = {
           trackingID: "G-PYKH289910",
           anonymizeIP: true,
         },
+        gtag: {
+          trackingID: "G-PYKH289910",
+          anonymizeIP: true,
+        },
       } satisfies Preset.Options,
     ],
   ],
