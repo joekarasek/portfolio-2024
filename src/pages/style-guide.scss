@@ -7,6 +7,11 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 clamp(12px, 10vw, 120px);
+  
+  // Ensure parent containers don't constrain table overflow
+  .container {
+    overflow-x: visible;
+  }
 
   &__header {
     margin-bottom: $space-stack-m;
@@ -66,10 +71,36 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
 .color-table-container {
   overflow-x: auto;
   margin: 1rem 0;
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-background-color);
+
+  // Ensure table doesn't shrink below minimum width on mobile
+  min-width: 0;
+  
+  // Add subtle scroll indicators
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--ifm-background-color);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--ifm-color-emphasis-400);
+    }
+  }
 }
 
 .color-table {
   width: 100%;
+  min-width: 600px; // Ensure table has minimum width for mobile scroll
   border-collapse: collapse;
   background: var(--ifm-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -211,10 +242,36 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
 .font-table-container {
   overflow-x: auto;
   margin: 1rem 0;
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-background-color);
+
+  // Ensure table doesn't shrink below minimum width on mobile
+  min-width: 0;
+  
+  // Add subtle scroll indicators
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--ifm-background-color);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--ifm-color-emphasis-400);
+    }
+  }
 }
 
 .font-table {
   width: 100%;
+  min-width: 600px; // Ensure table has minimum width for mobile scroll
   border-collapse: collapse;
   background: var(--ifm-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -343,10 +400,36 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
 .font-size-table-container {
   overflow-x: auto;
   margin: 1rem 0;
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-background-color);
+
+  // Ensure table doesn't shrink below minimum width on mobile
+  min-width: 0;
+  
+  // Add subtle scroll indicators
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--ifm-background-color);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--ifm-color-emphasis-400);
+    }
+  }
 }
 
 .font-size-table {
   width: 100%;
+  min-width: 650px; // Ensure table has minimum width for mobile scroll
   border-collapse: collapse;
   background: var(--ifm-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -526,10 +609,36 @@ table thead tr {
 .vertical-rhythm-table-container {
   overflow-x: auto;
   margin: 1rem 0;
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-background-color);
+
+  // Ensure table doesn't shrink below minimum width on mobile
+  min-width: 0;
+  
+  // Add subtle scroll indicators
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--ifm-background-color);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--ifm-color-emphasis-400);
+    }
+  }
 }
 
 .vertical-rhythm-table {
   width: 100%;
+  min-width: 700px; // Ensure table has minimum width for mobile scroll
   border-collapse: collapse;
   background: var(--ifm-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -721,10 +830,36 @@ table thead tr {
 .component-table-container {
   overflow-x: auto;
   margin: 1rem 0;
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-background-color);
+
+  // Ensure table doesn't shrink below minimum width on mobile
+  min-width: 0;
+  
+  // Add subtle scroll indicators
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--ifm-background-color);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--ifm-color-emphasis-400);
+    }
+  }
 }
 
 .component-table {
   width: 100%;
+  min-width: 800px; // Ensure table has minimum width for mobile scroll (wider for 4 columns)
   border-collapse: collapse;
   background: var(--ifm-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -868,6 +1003,63 @@ table thead tr {
 
   .component-showcase__code {
     background: var(--ifm-color-emphasis-200);
+  }
+}
+
+// Mobile-specific fixes for table overflow
+@media (max-width: 768px) {
+  .style-guide {
+    padding: 0 1rem; // Reduce side padding on mobile
+    max-width: 100vw; // Allow full viewport width
+    overflow-x: visible; // Ensure no horizontal clipping
+    
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 100%;
+    }
+  }
+  
+  // Make table containers break out of constrained layout on mobile
+  .color-table-container,
+  .font-table-container,
+  .font-size-table-container,
+  .vertical-rhythm-table-container,
+  .component-table-container {
+    // Break out of parent padding constraints
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    // Ensure scroll is visible and functional
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    
+    // Force the container to be scrollable
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    // Reset padding for content
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  // Ensure tables maintain their minimum widths
+  .color-table,
+  .font-table,
+  .font-size-table,
+  .vertical-rhythm-table,
+  .component-table {
+    // Force minimum width to trigger horizontal scroll
+    width: max-content;
+    min-width: 100%;
   }
 }
 

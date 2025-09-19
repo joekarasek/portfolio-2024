@@ -94,6 +94,19 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
     &:last-child {
       margin-bottom: 0;
     }
+
+    // Remove card styling on mobile screens
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
   }
 
   &__job-header {
@@ -166,6 +179,19 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
     &:hover {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
+    // Remove card styling on mobile screens
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
   }
 
   &__education-degree {
@@ -199,6 +225,17 @@ $space-stack-s: clamp(20px, calc(1.25rem + ((1vw - 6px) * 6)), 200px);
 
       &:hover {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      // Ensure mobile styles override dark mode styles
+      @media screen and (max-width: 768px) {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+
+        &:hover {
+          box-shadow: none;
+        }
       }
     }
   }
