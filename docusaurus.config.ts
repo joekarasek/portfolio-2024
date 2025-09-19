@@ -81,7 +81,6 @@ const config: Config = {
       // },
       items: [
         { to: "/blog", label: "Writings", position: "left" },
-        { to: "/about-me", label: "About Me", position: "left" },
         { to: "/resume", label: "Resume", position: "left" },
         { to: "/style-guide", label: "Style Guide", position: "left" },
         { to: "/contact", label: "Connect", position: "right" },
@@ -93,7 +92,6 @@ const config: Config = {
           title: "Site",
           items: [
             { to: "/blog", label: "Writings" },
-            { to: "/about-me", label: "About Me" },
             { to: "/resume", label: "Resume" },
             { to: "/style-guide", label: "Style Guide" },
             { to: "/contact", label: "Contact" },
